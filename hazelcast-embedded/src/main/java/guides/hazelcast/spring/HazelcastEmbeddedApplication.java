@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class Application {
+public class HazelcastEmbeddedApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(HazelcastEmbeddedApplication.class, args);
     }
 
 
@@ -20,7 +20,7 @@ public class Application {
         Config config = new Config();
         config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
         config.getNetworkConfig().getJoin().getKubernetesConfig().setEnabled(true);
-        config.getNetworkConfig().getJoin().getKubernetesConfig().setProperty("service-name","hazelcast-embedded-headless");
+        config.getNetworkConfig().getJoin().getKubernetesConfig().setProperty("service-dns","hazelcast-embedded-headless");
         return config;
     }
 }

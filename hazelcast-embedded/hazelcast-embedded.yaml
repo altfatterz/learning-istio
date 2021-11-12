@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hazelcast-embedded
-          image: hazelcastguides/istio-embedded:1.0
+          image: altfatterz/hazelcast-embedded:1.0
           imagePullPolicy: Always
           ports:
           - containerPort: 5701
