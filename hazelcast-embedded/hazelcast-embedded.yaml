@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -18,7 +19,7 @@ spec:
           image: altfatterz/hazelcast-embedded:1.0
           imagePullPolicy: Always
           ports:
-          - containerPort: 5701
+            - containerPort: 5701
           env:
             - name: MY_POD_NAME
               valueFrom:
@@ -45,7 +46,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-service
+  name: hazelcast-embedded
 spec:
   type: ClusterIP
   selector:
