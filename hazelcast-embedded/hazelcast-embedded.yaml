@@ -1,10 +1,9 @@
 ---
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: hazelcast-embedded
 spec:
-  serviceName: hazelcast-embedded
   replicas: 3
   selector:
     matchLabels:
@@ -16,8 +15,8 @@ spec:
     spec:
       containers:
         - name: hazelcast-embedded
-          image: altfatterz/hazelcast-embedded:1.0
-          imagePullPolicy: Always
+          image: altfatterz/hazelcast-embedded:1.0.0
+          imagePullPolicy: Never
           ports:
             - containerPort: 5701
           env:
