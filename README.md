@@ -92,8 +92,8 @@ Results, for each istio version:
 
 
 Reference:
-https://github.com/hazelcast/hazelcast/issues/18320
-https://github.com/hazelcast/hazelcast/issues/18177
-https://github.com/hazelcast/hazelcast/issues/14156
-https://github.com/hazelcast/hazelcast-kubernetes/issues/118
+* https://github.com/hazelcast/hazelcast/issues/18320
+* https://github.com/hazelcast/hazelcast/issues/18177
+* https://github.com/hazelcast/hazelcast/issues/14156 
+* https://github.com/hazelcast/hazelcast-kubernetes/issues/118
 
