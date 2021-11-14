@@ -83,7 +83,7 @@ Results, for each istio version:
 
 ```bash
 1.11.4 - works
-1.10.5 - ?
+1.10.5 - works
 1.9.9  - works
 1.8.6  - works
 1.7.8  - works
