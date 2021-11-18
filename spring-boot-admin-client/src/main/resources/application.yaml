@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-admin-client
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: always
+      probes.enabled: true

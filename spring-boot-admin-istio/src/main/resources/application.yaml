@@ -1,8 +1,17 @@
 spring:
-  cloud:
-    discovery:
-      client:
-        simple:
-          instances:
-            client:
-              - uri: http://spring-boot-admin-client:8080
+  application:
+    name: spring-boot-admin-istio
+
+
+spring.boot.admin.discovery:
+  ignored-services:
+    - spring-boot-admin-istio
+    - kubernetes
+
+spring.cloud.kubernetes.discovery.
+
+
+
+logging:
+  level:
+    de.codecentric.boot.admin.server: debug
