@@ -16,7 +16,6 @@ spec:
       containers:
         - name: hazelcast-embedded
           image: altfatterz/hazelcast-embedded:1.0.0
-          imagePullPolicy: Never
           ports:
             - containerPort: 5701
           env:

@@ -16,7 +16,6 @@ spec:
       containers:
         - name: app
           image: altfatterz/spring-boot-admin-istio:1.0.0
-          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---

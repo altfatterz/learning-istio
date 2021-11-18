@@ -47,8 +47,12 @@ $ istioctl install --set profile=demo -y
 $ kubectl get all -n istio-system
   # enable envoy proxy injection
 $ kubectl label namespace default istio-injection=enabled
-  # load the docker image into the cluster
-$ kind load docker-image --name k8s-with-istio-$ISTIO_VERSION altfatterz/hazelcast-embedded:1.0.0
+  # load the dockk ter image into the cluster
+$ kind load docker-image altfatterz/hazelcast-embedded:1.0.0 --name k8s-with-istio-1.11.4
+  #verify images that are loaded
+$ kubectl get nodes
+$ docker exec -ti <nodename> bash
+$ crictl images
   # allow only mutual TLS traffic
 $ kubectl apply -f peer-authentication.yaml
   # deploy the application
