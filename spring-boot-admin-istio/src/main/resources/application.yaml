@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            client:
+              - uri: http://spring-boot-admin-client:8080

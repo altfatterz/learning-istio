@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-admin-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-admin-client
+  template:
+    metadata:
+      labels:
+        app: spring-boot-admin-client
+    spec:
+      containers:
+        - name: app
+          image: altfatterz/spring-boot-admin-client:1.0.0
+          ports:
+            - containerPort: 8080
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-admin-client
+spec:
+  selector:
+    app: spring-boot-admin-client
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

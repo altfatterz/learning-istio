@@ -13,6 +13,7 @@ spec:
       labels:
         app: spring-boot-admin-istio
     spec:
+      serviceAccountName: spring-boot-admin-istio
       containers:
         - name: app
           image: altfatterz/spring-boot-admin-istio:1.0.0
@@ -29,5 +30,41 @@ spec:
     app: spring-boot-admin-istio
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: spring-boot-admin-istio
+
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: spring-boot-admin-istio
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+      - services
+      - endpoints
+    verbs:
+      - get
+      - list
+      - watch
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: spring-boot-admin-istio
+roleRef:
+  kind: Role
+  name: spring-boot-admin-istio
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - kind: ServiceAccount
+    name: spring-boot-admin-istio
