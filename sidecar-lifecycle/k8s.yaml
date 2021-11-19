@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jetty-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jetty
+  template:
+    metadata:
+      labels:
+        app: jetty
+    spec:
+      containers:
+        - name: jetty
+          image: jetty:10.0.7
+          ports:
+            - containerPort: 80
